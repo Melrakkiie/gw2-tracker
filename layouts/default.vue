@@ -25,10 +25,10 @@
         <div class="d-flex px-3 py-2">
           <p>
             Made with <span class="bi bi-heart-fill text-danger"></span> by
-            Arnaud Langelier
+            Aurore Langelier
             <i
               ><b-link
-                href="https://github.com/arnaudlange"
+                href="https://github.com/Melrakkiie"
                 target="_blank"
                 class="bi bi-github"
               ></b-link
