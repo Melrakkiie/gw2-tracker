@@ -37,6 +37,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     'cookie-universal-nuxt',
+    '@vercel/speed-insights',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
