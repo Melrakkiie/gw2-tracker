@@ -1,0 +1,20 @@
+diff --git a/lib/index.js b/lib/index.js
+index eed617851b3abd0968b59ca79424ed2b162bd73f..878f212add1157acf3782db13d69cfdd0fee8983 100644
+--- a/lib/index.js
++++ b/lib/index.js
+@@ -322,7 +322,6 @@ async function build(opts) {
+     "--prefer-offline",
+     "--frozen-lockfile",
+     "--non-interactive",
+-    "--production=false",
+     `--modules-folder=${modulesPath}`,
+     `--cache-folder=${yarnCachePath}`
+   ], { ...spawnOpts, env: { ...spawnOpts.env, NODE_ENV: "development" } }, meta);
+@@ -376,7 +375,6 @@ async function build(opts) {
+     "--prefer-offline",
+     "--pure-lockfile",
+     "--non-interactive",
+-    "--production=true",
+     `--modules-folder=${modulesPath}`,
+     `--cache-folder=${yarnCachePath}`
+   ], {
