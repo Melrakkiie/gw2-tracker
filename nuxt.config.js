@@ -13,10 +13,7 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   css: [],
-  plugins: [
-    '~/plugins/axios.js',
-    { src: '~/plugins/persistedState.js', mode: 'client' },
-  ],
+  plugins: ['~/plugins/axios.js', { src: '~/plugins/persistedState.js' }],
   components: true,
   buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/google-fonts'],
   modules: ['bootstrap-vue/nuxt', '@nuxtjs/axios', 'cookie-universal-nuxt'],
