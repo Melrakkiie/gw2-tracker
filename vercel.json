@@ -1,4 +1,12 @@
 {
-  "buildCommand": "yarn build",
-  "framework": "nuxtjs"
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node",
+      "config": {
+        "buildCommand": "yarn build",
+        "startCommand": "yarn start"
+      }
+    }
+  ]
 }
