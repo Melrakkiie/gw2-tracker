@@ -1,8 +1,18 @@
 diff --git a/lib/index.js b/lib/index.js
-index eed617851b3abd0968b59ca79424ed2b162bd73f..878f212add1157acf3782db13d69cfdd0fee8983 100644
+index eed617851b3abd0968b59ca79424ed2b162bd73f..e31cc2f552003cd719f62d5e090c1d03d2dc9b71 100644
 --- a/lib/index.js
 +++ b/lib/index.js
-@@ -322,7 +322,6 @@ async function build(opts) {
+@@ -312,17 +312,12 @@ async function build(opts) {
+   await fs__default["default"].mkdirp(cachePath);
+   const yarnCachePath = path__default["default"].join(cachePath, "yarn");
+   await fs__default["default"].mkdirp(yarnCachePath);
+-  if (process.env.VERCEL_ANALYTICS_ID) {
+-    consola__default["default"].log("Vercel Analytics Detected. Adding @nuxtjs/web-vitals to .nuxtrc");
+-    rc9.update({ "buildModules[]": require.resolve("@nuxtjs/web-vitals") }, { dir: entrypointPath, name: ".nuxtrc" });
+-  }
+   startStep("Install devDependencies");
+   await prepareNodeModules(entrypointPath, "node_modules_dev");
+   await buildUtils.runNpmInstall(entrypointPath, [
      "--prefer-offline",
      "--frozen-lockfile",
      "--non-interactive",
@@ -10,7 +20,7 @@ index eed617851b3abd0968b59ca79424ed2b162bd73f..878f212add1157acf3782db13d69cfdd
      `--modules-folder=${modulesPath}`,
      `--cache-folder=${yarnCachePath}`
    ], { ...spawnOpts, env: { ...spawnOpts.env, NODE_ENV: "development" } }, meta);
-@@ -376,7 +375,6 @@ async function build(opts) {
+@@ -376,7 +371,6 @@ async function build(opts) {
      "--prefer-offline",
      "--pure-lockfile",
      "--non-interactive",
