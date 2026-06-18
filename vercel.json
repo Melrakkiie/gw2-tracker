@@ -6,5 +6,8 @@
       "use": "@nuxtjs/vercel-builder",
       "config": {}
     }
-  ]
+  ],
+  "env": {
+    "VERCEL_ANALYTICS_ID": ""
+  }
 }
