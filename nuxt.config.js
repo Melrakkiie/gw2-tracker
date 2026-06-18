@@ -1,5 +1,4 @@
 export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'GW2 Tracker',
     htmlAttrs: {
@@ -13,38 +12,17 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-
-  // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
-
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/axios.js', { src: '~/plugins/persistedState.js' }],
-
-  // Auto import components: https://go.nuxtjs.dev/config-components
+  plugins: [
+    '~/plugins/axios.js',
+    { src: '~/plugins/persistedState.js', mode: 'client' },
+  ],
   components: true,
-
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
-    '@nuxtjs/google-fonts',
-  ],
-
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    // https://go.nuxtjs.dev/bootstrap
-    'bootstrap-vue/nuxt',
-    // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
-    'cookie-universal-nuxt',
-  ],
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
+  buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/google-fonts'],
+  modules: ['bootstrap-vue/nuxt', '@nuxtjs/axios', 'cookie-universal-nuxt'],
   axios: {
-    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     proxy: true,
   },
-
   proxy: {
     '/gw2-api/': {
       target: 'https://api.guildwars2.com/v2/',
@@ -52,10 +30,7 @@ export default {
       changeOrigin: true,
     },
   },
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-
   googleFonts: {
     download: true,
     families: {
